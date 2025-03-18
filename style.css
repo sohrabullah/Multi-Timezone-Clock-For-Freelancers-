@@ -1,0 +1,167 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .legend div {
+            display: flex;
+            align-items: center;
+            margin: 3px 5px;
+        }
+
+        .color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.clock {
+            width: 300px;
+            height: 300px;
+            background: white;
+            border-radius: 50%;
+            border: 8px solid black;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        /* Pakistan Image */
+        .clock img {
+            position: absolute;
+            width: 120px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+        }
+
+        /* Hour Markers */
+        .hour-marker {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Minute Markers (Perpendicular) */
+        .minute-marker {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: black;
+            transform-origin: center;
+        }
+
+        .hand {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: 50% 100%; /* Ensures rotation from exact bottom center */
+            transform: rotate(0deg);
+            transition: transform 0.05s linear;
+        }
+
+        .hour-hand {
+            width: 6px;
+            height: 60px;
+            background: black;
+            border-radius: 4px;
+            transform: translate(-50%, -100%);
+        }
+
+        .minute-hand {
+            width: 4px;
+            height: 90px;
+            background: gray;
+            border-radius: 4px;
+            transform: translate(-50%, -100%);
+        }
+        .second-hand {
+            width: 2px;
+            height: 110px;
+            background: red;
+            border-radius: 4px;
+            transform: translate(-50%, -100%);
+        }
+        .center-circle {
+            width: 15px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+/* Styling for legend box */
+.legend {
+    margin-top: 20px;
+    text-align: center;
+}
+
+        .digital-time {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .time-box {
+            width: 150px;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid black;
+            border-radius: 6px;
+            margin: 5px;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+        .night { background: black; color: white; }
+        .morning { background: #ADD8E6; color: black; } /* Light Blue */
+        .noon { background: #FFD700; color: black; } /* Gold */
+        .asr { background: #555; color: white; } /* Light Black/Grey */
+        .sunset { background: #FF4500; color: white; } /* Orange/Red */
+
+
+        /* .day { background: white; color: black; }
+        .night { background: black; color: white; } */

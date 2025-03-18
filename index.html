@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Timezone Clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="container">
+   <div class="clock">
+             <!-- Hour and Minute Markers -->
+             <script>
+                for (let i = 1; i <= 12; i++) {
+                    let angle = (i * 30 - 90) * (Math.PI / 180);
+                    let x = 50 + Math.cos(angle) * 40 + "%"; 
+                    let y = 50 + Math.sin(angle) * 40 + "%"; 
+                    document.write(`<div class="hour-marker" style="left: ${x}; top: ${y};">${i}</div>`);
+                }
+
+                for (let i = 0; i < 60; i++) {
+                    let angle = (i * 6) - 90;
+                    let x = 50 + Math.cos(angle * Math.PI / 180) * 46 + "%";
+                    let y = 50 + Math.sin(angle * Math.PI / 180) * 46 + "%";
+                    document.write(`<div class="minute-marker" style="left: ${x}; top: ${y}; transform: rotate(${angle + 90}deg);"></div>`);
+                }
+            </script>
+
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+            <div class="center-circle"></div>
+        </div>
+    <div class="digital-time"></div>
+    <div class="legend">
+        <strong>🌎 Time of Day Colors:</strong>
+        <div><span class="color-box" style="background:#ADD8E6;"></span> 🌅 Morning</div>
+        <div><span class="color-box" style="background:#FFD700;"></span> ☀ Noon</div>
+        <div><span class="color-box" style="background:#555;"></span> 🌤 Asr</div>
+        <div><span class="color-box" style="background:#FF4500;"></span> 🌇 Sunset</div>
+        <div><span class="color-box" style="background:black;"></span> 🌙 Night</div>
+    </div>
+    
+    </div>
+    <script src="clock.js"></script>
+
+</body>
+</html>
